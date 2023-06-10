@@ -1,4 +1,4 @@
-
+infoss = ["name","nickname","age","country","email","number"]
 class person :
     def __init__(self,name,nickname,age,country,email,number):
         self.name=name
@@ -11,30 +11,16 @@ class person :
     def createfile(self):
         file = open("%s.txt" %self.name,"a")
         file.write("-------------INFORMATION-------------\n\n")
-        if self.name != None:
-            file.write(f"    name : {self.name}\n   ")
-        if self.nickname != None:
-            file.write(f"    nickname : {self.nickname}\n   ")
-        if self.age != None:
-            file.write(f"    age : {self.age}\n   ")
-        if self.country != None:   
-            file.write(f"    country : {self.country}\n   ")
-        if self.email != None:
-            file.write(f"    email : {self.email}\n   ")
-        if self.number != None :
-            file.write(f"    number : {self.number}\n   ")
+        
+        for inf in infoss:
+            if self.inf != None:
+                file.write(f"    {inf} : {self.inf}\n   ")
         file.write("----------------------- -------------\n\n")
         return file
         
 def getinfo():
-    username = input("name :")
-    usernickname = input("nickname :")
-    userage = input("age :")
-    usercountry = input("country :")
-    useremail = input("email :")
-    usernumber = input("number :")
-    user = person(username,usernickname,userage,usercountry,useremail,usernumber)
-    person.createfile(user)
+    for inf in infoss :
+        inf = input(f"{inf} : ")
     
 def home():
     choice = input("WHAT OPPERATION YOU WANT TO DO ? : \n\n a)create a file of your infos \n\n b)edit an already exsting file \n\n c) exit \n\n     chose:")
