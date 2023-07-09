@@ -1,5 +1,6 @@
 import random 
 import string
+import sys
 
 #till now we will just declare the password and password length variables
 password = ""
